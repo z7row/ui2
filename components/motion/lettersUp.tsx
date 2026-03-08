@@ -8,11 +8,13 @@ export function LettersPullUp({
   delayontext = 0.01,
   className = "",
   delaybe = 0,
+  style,
 }: {
   text: string;
   delayontext?: number;
   className?: string;
   delaybe?: number;
+  style?: object;
 }) {
   const splittedText = text.split("");
 
@@ -40,7 +42,7 @@ export function LettersPullUp({
           animate={isInView ? "animate" : ""}
           custom={i}
           className={cn(" text-center font-bold   md:leading-16", className)}
-
+          style={style}
         >
           {current == " " ? <span>&nbsp;</span> : current}
         </motion.div>
