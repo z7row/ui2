@@ -1,7 +1,6 @@
 "use client";
 import { LettersPullUp } from "@/components/motion/lettersUp";
-import { Button } from "@/components/ui/button";
-import { delay, motion, scale, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import localFont from "next/font/local";
 import { useState } from "react";
 
@@ -23,12 +22,6 @@ const colors = {
   accent: "#b8860b",
 };
   const [on, seton] = useState(false);
-  const box = {
-    width: 100,
-    // height: screen.height,
-    backgroundColor: "#ff0088",
-    borderRadius: 5,
-  };
 
   return (
     <motion.div className=" p-15 flex flex-col justify-between   md:justify-center min-h-dvh md:min-h-screen gap-5 items-center overflow-hidden scroll-smooth">
@@ -59,19 +52,14 @@ const colors = {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, transition: { delay: 4 } }}
           whileHover={{
-            // position: "fixed",
             x: 0,
             y: 0,
-            // height: "100vh",
-            // borderRadius: 0,
             transition: { duration: 0.1 },
           }}
           transition={{ duration: 0.1 }}
-          // whileTap={{ scale: 1.8 }}
           onTap={() => {
             seton(true);
           }}
-          // style={on ? { display: "none" } : {}}
           className={`md:w-130 text-center md:text-8xl md:h-50 h-20 w-70
         ${pixlefont.className}
         shadow-sm 
@@ -85,14 +73,6 @@ const colors = {
           }}
         >
           Get Started{" "}
-          {/* <motion.span
-            initial={{ x: -250, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ delay: 4.2, duration: 0.5 }}
-            className="text-9xl scale-150 ml-5"
-          >
-            &gt;
-          </motion.span> */}
         </motion.div>
       </div>
       <AnimatePresence>
@@ -107,7 +87,6 @@ const colors = {
             transition={{ duration: 0.5 }}
           >
             <button
-              // variant="link"
               onClick={() => {
                 seton(false);
               }}
@@ -118,7 +97,6 @@ const colors = {
             <motion.h1
               initial={{ y: 10, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 , transition:{ delay: 0.5}}}
-              // transition={{ duration: 0.5 }}
               className={`text-[${colors.text}] text-5xl`}
               style={{ color: colors.accent }}
               exit={{ opacity: 0 }}
